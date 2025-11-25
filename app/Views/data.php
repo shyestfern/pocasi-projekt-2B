@@ -4,10 +4,10 @@
 
 <?php
     $table = new \CodeIgniter\View\Table();
-    $table->setHeading('Datum', 'Vlhkost');
+    $table->setHeading('Datum', 'Vlhkost', 'Délka svitu', 'Průměrná rychlost větru');
 
     foreach($data as $row){
-        $table->addRow($row->date, $row->humidity);    
+        $table->addRow($row->date, $row->humidity, $row->sun_length, $row->mid_wind);    
     }
 
     $template = array(

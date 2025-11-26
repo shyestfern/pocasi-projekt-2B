@@ -37,9 +37,11 @@ class Main extends BaseController
 
     public function data($stanice){
         $celaData = new Data();
-        $nejakeData = $celaData->where('Stations_ID', $stanice)->orderBy('date', 'desc')->findAll();
+        $nejakeData = $celaData->where('Stations_ID', $stanice)->orderBy('date', 'desc')->paginate(25);
+        $pager = $celaData->pager;
         $data = [
-            'data' => $nejakeData
+            'data' => $nejakeData,
+            'pager' => $pager
         ];
         echo view('data', $data);
     }

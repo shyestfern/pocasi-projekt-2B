@@ -2,7 +2,7 @@
 
 <?= $this->section('content'); ?>
 
-<h1>Stanice v zemi <?= $zeme->name ?></h1>
+<h1>Přehled meteorologických stanic ve spolkové zemi <?= $zeme->name ?></h1>
 
 <?php
     $table = new \CodeIgniter\View\Table();

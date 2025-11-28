@@ -9,7 +9,7 @@
     foreach($data as $row){
         $unixTime = strtotime($row->date);
         $date = date("d\. m\. Y", $unixTime);
-        $table->addRow($date, $row->humidity, $row->sun_length, $row->mid_wind);
+        $table->addRow($date, $row->humidity." %", $row->sun_length, $row->mid_wind);
     }
 
     $template = array(

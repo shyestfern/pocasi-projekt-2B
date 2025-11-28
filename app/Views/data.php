@@ -7,7 +7,9 @@
     $table->setHeading('Datum', 'Vlhkost', 'Délka svitu', 'Průměrná rychlost větru');
 
     foreach($data as $row){
-        $table->addRow($row->date, $row->humidity, $row->sun_length, $row->mid_wind);    
+        $unixTime = strtotime($row->date);
+        $date = date("d\. m\. Y", $unixTime);
+        $table->addRow($date, $row->humidity, $row->sun_length, $row->mid_wind);
     }
 
     $template = array(

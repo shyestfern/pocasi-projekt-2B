@@ -9,7 +9,7 @@
     $table->setHeading('Místo', 'Zem. šířka', 'Zem. délka', 'Nadm. výška');
 
     foreach($stanice as $row){
-        $table->addRow(anchor('data/'.$row->S_ID, $row->place), $row->geo_latitude, $row->geo_longtitude, $row->height." m");    
+        $table->addRow(anchor('data/'.$row->S_ID, $row->place), $row->geo_latitude, $row->geo_longtitude, $row->height." m n. m.");    
     }
 
     $template = array(

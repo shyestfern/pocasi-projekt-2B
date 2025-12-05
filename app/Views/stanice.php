@@ -2,16 +2,20 @@
 
 <?= $this->section('content'); ?>
 
-<h1><?= $zeme->name ?></h1>
+<h1 class="text-center m-4"><?= $zeme->name ?></h1>
 
-<div>
-    <img src="<?= base_url('images/flags/' . $zeme->vlajka) ?>" alt="<?= "Vlajka spolkové země " . $zeme->name ?>">
-</div>
-<div>
-    <img src="<?= base_url('images/maps/' . $zeme->mapa) ?>" alt="<?= "Mapa spolkové země " . $zeme->name ?>">
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col-lg-8 col-6">
+            <img class="w-100" src="<?= base_url('images/flags/' . $zeme->vlajka) ?>" alt="<?= "Vlajka spolkové země " . $zeme->name ?>">
+        </div>
+        <div class="col-lg-4 col-6">
+            <img class="w-100" src="<?= base_url('images/maps/' . $zeme->mapa) ?>" alt="<?= "Mapa spolkové země " . $zeme->name ?>">
+        </div>
+    </div>
 </div>
 
-<h2>Přehled meteorologických stanic ve spolkové zemi <?= $zeme->name ?></h2>
+<h2 class="text-center m-4">Přehled meteorologických stanic ve spolkové zemi <?= $zeme->name ?></h2>
 
 <?php
     $table = new \CodeIgniter\View\Table();

@@ -2,7 +2,7 @@
 
 <?= $this->section('content'); ?>
 
-<h1>Přehled zemí</h1>
+<h1 class="text-center m-4">Přehled zemí</h1>
 
 <?php
     $table = new \CodeIgniter\View\Table();

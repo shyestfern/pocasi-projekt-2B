@@ -7,10 +7,10 @@
 <div class="container">
     <div class="row align-items-center">
         <div class="col-lg-8 col-6">
-            <img class="w-100" src="<?= base_url('images/flags/' . $zeme->vlajka) ?>" alt="<?= "Vlajka spolkové země " . $zeme->name ?>">
+            <img class="img-fluid" src="<?= base_url('images/flags/' . $zeme->vlajka) ?>" alt="<?= "Vlajka spolkové země " . $zeme->name ?>">
         </div>
         <div class="col-lg-4 col-6">
-            <img class="w-100" src="<?= base_url('images/maps/' . $zeme->mapa) ?>" alt="<?= "Mapa spolkové země " . $zeme->name ?>">
+            <img class="img-fluid" src="<?= base_url('images/maps/' . $zeme->mapa) ?>" alt="<?= "Mapa spolkové země " . $zeme->name ?>">
         </div>
     </div>
 </div>

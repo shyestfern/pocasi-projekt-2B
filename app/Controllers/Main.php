@@ -45,4 +45,15 @@ class Main extends BaseController
         ];
         echo view('data', $data);
     }
+
+    public function kartyStanic(){
+        $bundesland = new Bundesland();
+        $zeme = $bundesland->findAll();
+        $station = new Station();
+        $stanice = $station->where('bundesland', $zeme)->findAll();
+        $data = [
+            'stanice' => $stanice
+        ];
+        echo view('stanice', $data);
+    }
 }

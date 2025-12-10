@@ -8,3 +8,4 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Main::index');
 $routes->get('stanice/(:num)', 'Main::stanice/$1');
 $routes->get('data/(:num)', 'Main::data/$1');
+$routes->get('karty-stanic/', 'Main::kartyStanic');

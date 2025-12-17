@@ -47,13 +47,11 @@ class Main extends BaseController
     }
 
     public function kartyStanic(){
-        $bundesland = new Bundesland();
-        $zeme = $bundesland->findAll();
         $station = new Station();
-        $stanice = $station->where('bundesland', $zeme)->findAll();
+        $stanice = $station->findAll();
         $data = [
             'stanice' => $stanice
         ];
-        echo view('stanice', $data);
+        echo view('karty_stanic', $data);
     }
 }

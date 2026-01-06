@@ -17,37 +17,28 @@
 
 <h2 class="text-center m-4">Přehled meteorologických stanic ve spolkové zemi <?= $zeme->name ?></h2>
 
-<?php
-    $table = new \CodeIgniter\View\Table();
-    $table->setHeading('Místo', 'Zem. šířka', 'Zem. délka', 'Nadm. výška');
+<div class="row">
+    <?php foreach($stanice as $row): ?>
 
-    foreach($stanice as $row){
-        $table->addRow(anchor('data/'.$row->S_ID, $row->place), $row->geo_latitude, $row->geo_longtitude, $row->height." m n. m.");    
-    }
+        <div class="col-md-6 col-12 mb-4">
+            <div class="card">
+                <div class="card-body">
 
-    $template = array(
-        'table_open'=> '<table class="table table-bordered">',
-        'thead_open'=> '<thead>',
-        'thead_close'=> '</thead>',
-        'heading_row_start'=> '<tr>',
-        'heading_row_end'=>' </tr>',
-        'heading_cell_start'=> '<th>',
-        'heading_cell_end' => '</th>',
-        'tbody_open' => '<tbody>',
-        'tbody_close' => '</tbody>',
-        'row_start' => '<tr>',
-        'row_end'  => '</tr>',
-        'cell_start' => '<td>',
-        'cell_end' => '</td>',
-        'row_alt_start' => '<tr>',
-        'row_alt_end' => '</tr>',
-        'cell_alt_start' => '<td>',
-        'cell_alt_end' => '</td>',
-        'table_close' => '</table>'
-    );
-        
-    $table->setTemplate($template);
-    echo $table->generate();
-?>
+                    <h5 class="card-title">
+                        <?= anchor('data/'.$row->S_ID, $row->place); ?>
+                    </h5>
+
+                    <ul class="list-unstyled">
+                        <li>Zem. šířka: <?= $row->geo_latitude ?></li>
+                        <li>Zem. délka: <?= $row->geo_longtitude ?></li>
+                        <li>Nadm. výška: <?= $row->height ?> m n. m.</li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+
+    <?php endforeach; ?>
+</div>
 
 <?= $this->endSection(); ?>

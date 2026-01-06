@@ -48,7 +48,12 @@ class Main extends BaseController
 
     public function kartyStanic(){
         $station = new Station();
-        $stanice = $station->findAll();
+
+        $stanice = $station
+            ->join('bundesland', 'station.bundesland = bundesland.id', 'inner')
+            ->orderBy('place', 'asc')
+            ->findAll();
+        
         $data = [
             'stanice' => $stanice
         ];

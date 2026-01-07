@@ -11,25 +11,21 @@
             <div class="card">
                 <div class="card-body">
 
-                    <h5 class="card-title">
+                    <h5 class="card-title text-center">
                         <?= anchor('data/'.$row->S_ID, $row->place); ?>
                     </h5>
 
-                    <img src="<?= base_url('images/flags/'.$row->flag) ?>"
+                    <img src="<?= base_url('images/flags/'.$row->vlajka) ?>"
                     class="img-fluid w-100"
                     style="max-height: 250px; object-fit: contain;" 
                     alt="Vlajka <?= $row->name ?>"><br>
 
-                    <ul class="list-unstyled">
+                    <ul class="list-unstyled text-center mt-4">
                         <li>Zem. šířka: <?= $row->geo_latitude ?></li>
                         <li>Zem. délka: <?= $row->geo_longtitude ?></li>
                         <li>Nadm. výška: <?= $row->height ?> m n. m.</li>
                     </ul>
 
-                    <a href="<?= base_url('data/'.$row->S_ID) ?>" class="btn btn-primary btn-sm mt-2">
-                        Zobrazit data
-                    </a>
-                    
                 </div>
             </div>
         </div>
